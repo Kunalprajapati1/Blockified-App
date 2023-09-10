@@ -1,29 +1,34 @@
 import React, { useState } from 'react';
 import { StyleSheet, Text, View, Image, TextInput } from 'react-native';
+import NetflixCard from './NetflixCard';
 
 const Home = () => {
   const [searchText, setSearchText] = useState('');
 
   return (
     <View style={styles.container}>
-      {/* Search Box */}
+       <Image
+        source={require('../../assets/block2.jpg')}
+        style={styles.image}
+      />
       <TextInput
         style={styles.searchBox}
         placeholder="Search..."
         placeholderTextColor="white"
-        onChangeText={text => setSearchText(text)}
-        value={searchText}
+        textAlign="left"
+       
+        
+        //onChangeText={text => setSearchText(text)}
+        //value={searchText}
       />
 
       {/* Image (positioned in the left corner of the upper area) */}
-      <Image
-        source={require('../../assets/block2.jpg')}
-        style={styles.image}
-      />
+     
 
-      {/* Content */}
-      <Text style={{ color: 'white' }}>hum tere bin ab reh nhi</Text>
-      <Text style={{ color: 'white' }}>nice to meet you</Text>
+
+
+
+     <NetflixCard/>
     </View>
   );
 };
@@ -37,20 +42,28 @@ const styles = StyleSheet.create({
   searchBox: {
     width: '100%',
     height: 50,
-    top: 40,
+    top: 45,
     left:20,
-    backgroundColor: '#F0EEEE',
+    backgroundColor: '#f0eeee7d',
     borderWidth: 4,
     borderColor: '#ccc',
     borderRadius: 9,
     paddingLeft: 130,
     marginBottom: 60,
     color: 'white',
+    
   },
+  placeholder: {
+    textAlign: "left", 
+  },
+
+
+
+
   image: {
     position: 'absolute',
     top: 30,
-    left: -80,
+    left: 0,
     width: 100, // Adjust the width as needed
     height: 100, // Adjust the height as needed
   },
